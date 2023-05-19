@@ -14,6 +14,11 @@ function PlaceItem(props) {
   function closeMapHandler() {
     setShowMap(false);
   }
+
+  let coordinates= [];
+  coordinates.push(props.coordinates.long);
+  coordinates.push(props.coordinates.lat);
+
   return (
     <React.Fragment>
       <Modal
@@ -25,7 +30,7 @@ function PlaceItem(props) {
         footer={<Button onClick={closeMapHandler}>CLOSE</Button>}
       >
         <div className="map-container">
-          <h2>LE MAP</h2>
+          <Map center={coordinates} zoom={13}/>
         </div>
       </Modal>
       <li className="place-item">
