@@ -18,7 +18,7 @@ const DUMMY_PLACES = [
     creator: "u1",
   },
   {
-    id: "p1",
+    id: "p2",
     title: "Mt Yokodake",
     description:
       "A beautiful and the highest mountain in the Minami Yatsugatake Mountain Range, Nagano Prefecture, Japan",
@@ -35,7 +35,7 @@ const DUMMY_PLACES = [
 
 function UserPlaces() {
   const userId = useParams().userId;
-  const loadedPlaces = DUMMY_PLACES.filter(place => place.creator === userId)
+  const loadedPlaces = DUMMY_PLACES.filter((place) => place.creator === userId);
   return <PlaceList items={loadedPlaces} />;
 }
 
